@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --success-color: #10b981;
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --border-color: #e5e7eb;
+}
+
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* 过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* 骰子动画 */
+@keyframes diceRoll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  20% {
+    transform: rotateX(360deg) rotateY(180deg);
+  }
+  40% {
+    transform: rotateX(720deg) rotateY(360deg);
+  }
+  60% {
+    transform: rotateX(1080deg) rotateY(540deg);
+  }
+  80% {
+    transform: rotateX(1440deg) rotateY(720deg);
+  }
+  100% {
+    transform: rotateX(1800deg) rotateY(900deg);
+  }
+}
+
+.dice-animation {
+  animation: diceRoll 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* 可访问性焦点样式 */
+.focus-visible:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 统计图表样式 */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2;
+}
+
+.btn-primary:disabled {
+  @apply bg-gray-400 text-gray-600 cursor-not-allowed opacity-50;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2;
+}
+
+/* 卡片样式 */
+.card {
+  @apply bg-white rounded-xl shadow-md p-6 mb-6 border border-gray-100;
+}
+
+.card-title {
+  @apply text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2;
+}
+
+/* 表单样式 */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-600 focus:border-blue-600;
+}
+
+.form-error {
+  @apply text-sm text-red-600 mt-1;
+}
+
+/* 任务表格样式 */
+.task-table {
+  @apply w-full border-collapse;
+}
+
+.task-table th {
+  @apply bg-gray-50 text-left px-4 py-2 text-sm font-medium text-gray-700 border-b border-gray-200;
+}
+
+.task-table td {
+  @apply px-4 py-3 text-sm text-gray-600 border-b border-gray-100;
+}
+
+.task-table tr:hover {
+  @apply bg-gray-50;
+}
+
+.task-table tr.completed {
+  @apply bg-green-50;
+}
+
+/* 进度条样式 */
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-4;
+}
+
+.progress-bar-fill {
+  @apply bg-blue-600 h-4 rounded-full transition-all duration-300;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl;
+}
+
+.modal-title {
+  @apply text-xl font-semibold mb-4;
+}
+
+.modal-actions {
+  @apply flex justify-end space-x-3 mt-6;
+}
+
+/* 加载动画 */
+.loader {
+  @apply inline-block w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin;
+}
+
+/* 成功/错误提示 */
+.alert-success {
+  @apply bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md;
+}
+
+.alert-error {
+  @apply bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md;
+}
+
+.alert-info {
+  @apply bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded-md;
+}
