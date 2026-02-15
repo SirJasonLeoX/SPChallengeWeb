@@ -56,7 +56,6 @@
           <div class="text-center py-6">
             <p class="text-gray-600 mb-4">觉得好玩？点击保存赞赏码，请作者喝杯咖啡吧！也请留下你的宝贵意见帮助作者不断改进！</p>
             <img src="../assets/reward-code.png" alt="打赏码" class="w-96 h-96 mx-auto mb-4">
-            <p class="text-sm text-gray-500">长按识别二维码打赏</p>
           </div>
         </div>
       </div>

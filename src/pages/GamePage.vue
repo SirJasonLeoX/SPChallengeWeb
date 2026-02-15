@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <!-- 胜利提示 -->
+        <!-- 胜利提示 -->
     <div v-if="gameState.is_game_over" class="modal-overlay">
       <div class="modal-content text-center">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -116,6 +116,18 @@
         </div>
         <h3 class="text-xl font-bold mb-2">恭喜你完成挑战！</h3>
         <p class="text-gray-600 mb-6">你已经到达终点！</p>
+        
+        <!-- 赞赏码区域 -->
+        <div class="mt-8">
+          <div class="card">
+            <h3 class="text-lg font-bold mb-3 border-b border-gray-200 pb-2 text-center">感谢支持</h3>
+            <div class="text-center py-6">
+              <p class="text-gray-600 mb-4">觉得好玩？点击保存赞赏码，请作者喝杯咖啡吧！也请留下你的宝贵意见帮助作者不断改进！</p>
+              <img src="../assets/reward-code.png" alt="打赏码" class="w-96 h-96 mx-auto mb-4">
+            </div>
+          </div>
+        </div>
+        
         <div class="flex justify-center space-x-3">
           <button @click="goToVictory" class="btn-primary px-6 py-2">
             惩罚统计
