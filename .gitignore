@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.env
+Design.md
+DEVELOPMENT_GUIDE.md
+Requirement.md
+dist/
